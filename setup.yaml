@@ -1,0 +1,12 @@
+---
+- hosts: hosts
+  tasks:
+  
+  - file:
+      dest: ~/.ssh
+      state: directory
+      mode: 0755
+  
+  - copy:
+      content: "{{ pub_key }}"
+      dest: ~/.ssh/authorized_keys
